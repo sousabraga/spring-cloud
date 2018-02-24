@@ -57,3 +57,15 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
 
 words: boat,book,vote,seat,backpack,partition,groundhog  
+
+# Novo profile para o mesmo service (noun-service) para testar o Ribbon
+---
+spring:
+  application:
+      name: noun-service
+  profiles: cold-noun
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+words: icicle,refrigerator,blizzard,snowball
