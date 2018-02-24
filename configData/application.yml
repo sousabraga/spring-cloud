@@ -1,0 +1,59 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+
+---
+spring:
+  application: 
+      name: subject-service
+  profiles: subject
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+words: I,You,He,She,It
+
+---
+spring:
+  application: 
+      name: verb-service
+  profiles: verb
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+words: ran,knew,had,saw,bought
+
+---
+spring:
+  application: 
+      name: article-service
+  profiles: article
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+words: a,the
+
+---
+spring:
+  application: 
+      name: adjective-service
+  profiles: adjective
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+words: reasonable,leaky,suspicious,ordinary,unlikely
+
+---
+spring:
+  application: 
+      name: noun-service
+  profiles: noun
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+words: boat,book,vote,seat,backpack,partition,groundhog  
