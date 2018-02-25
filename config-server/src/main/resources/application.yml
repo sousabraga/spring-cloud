@@ -5,4 +5,9 @@ spring:
         git:
           uri: https://github.com/sousabraga/spring-cloud/
           search-paths: configData
+          
+# For simplicity, disable security when posting to bus/refresh:  
+management:
+  security:
+    enabled: false
         

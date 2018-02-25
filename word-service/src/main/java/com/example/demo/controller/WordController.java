@@ -1,21 +1,29 @@
 package com.example.demo.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@ConfigurationProperties(prefix = "data")
 public class WordController {
 
-	@Value("${words}")
 	private String words;
 	
 	@GetMapping("/")
-	public String getWords() {
+	public String getWord() {
 		String[] wordArray = words.split(",");
 		int i = (int) Math.round(Math.random() * (wordArray.length - 1));
 		
 		return wordArray[i];
+	}
+
+	public String getWords() {
+		return words;
+	}
+
+	public void setWords(String words) {
+		this.words = words;
 	}
 	
 }
