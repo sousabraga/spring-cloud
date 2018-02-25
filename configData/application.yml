@@ -25,7 +25,8 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
 
 data: 
-  words: ran,knew,had,saw,bought
+  words: said, played
+  #words: ran,knew,had,saw,bought
 
 ---
 spring:
